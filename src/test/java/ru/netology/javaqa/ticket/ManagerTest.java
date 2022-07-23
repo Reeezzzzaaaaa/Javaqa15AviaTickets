@@ -1,6 +1,6 @@
 package ru.netology.javaqa.ticket;
 
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Assertions;25235
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
