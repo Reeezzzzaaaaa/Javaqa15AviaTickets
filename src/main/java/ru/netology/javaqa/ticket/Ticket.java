@@ -3,7 +3,7 @@ package ru.netology.javaqa.ticket;
 public class Ticket implements java.lang.Comparable<Ticket> {
 
     private int id;
-    private int price;2352
+    private int price;
     private String fromIATA;
     private String toIATA;
     private int timeToWay;

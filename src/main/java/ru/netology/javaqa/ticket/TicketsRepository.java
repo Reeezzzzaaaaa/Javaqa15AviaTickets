@@ -39,7 +39,7 @@ public class TicketsRepository {
                 copyToIndex++;
             }
         }
-        tickets = tmp;253252
+        tickets = tmp;
     }
 
     public Ticket[] findAll() {

@@ -3,7 +3,7 @@ package ru.netology.javaqa.ticket;
 import java.util.Arrays;
 
 public class TicketManager {
-    private TicketsRepository repo;235235
+    private TicketsRepository repo;
 
     public TicketManager(TicketsRepository repo) {
         this.repo = repo;
