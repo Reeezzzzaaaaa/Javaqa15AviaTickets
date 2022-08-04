@@ -1,5 +1,7 @@
 package ru.netology.javaqa.ticket;
 
+import java.util.Comparator;
+
 public class Ticket implements java.lang.Comparable<Ticket> {
 
     private int id;
@@ -59,7 +61,8 @@ public class Ticket implements java.lang.Comparable<Ticket> {
         this.timeToWay = timeToWay;
     }
 
-    @Override
+
+
     public int compareTo(Ticket o) {
         if ( this.price < o.price ) {
             return -1;
