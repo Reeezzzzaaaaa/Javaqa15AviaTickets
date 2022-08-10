@@ -58,7 +58,7 @@ public class ManagerTest {
     public void searchNotFindFromTest() {
 
         Assertions.assertThrows(NoFlightException.class, () -> {
-            manager.searchBy("LON","VNO");
+            manager.searchBy("LON","RTM");
         });
     }
 

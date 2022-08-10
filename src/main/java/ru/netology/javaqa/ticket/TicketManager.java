@@ -15,30 +15,21 @@ public class TicketManager {
 
     public Ticket[] searchBy(String textFrom, String textTo) {
         Ticket[] result = new Ticket[0];
-        int copyToIndexFrom = 0;
-        int copyToIndexFromTo = 0;
+        int copyToIndex = 0;
         Ticket[] tmp = new Ticket[repo.findAll().length];
         for (Ticket ticket : repo.findAll()) {
-            if ( matchesFromIATA(ticket, textFrom) ) {
-                tmp[copyToIndexFrom] = ticket;
-                copyToIndexFrom++;
-            }
-            if ( matchesToIATA(ticket, textTo) ) {
-                tmp[copyToIndexFromTo] = ticket;
-                copyToIndexFromTo++;
+            if (matchesFromIATA(ticket, textFrom) && matchesToIATA(ticket, textTo)) {
+                tmp[copyToIndex] = ticket;
+                copyToIndex++;
             }
         }
 
-        if (copyToIndexFromTo == 0) {
-            textTo = null;
-        }
-
-        if ( textTo == null ) {
+        if ( copyToIndex == 0 ) {
             throw new NoFlightException("Рейс " + textFrom + textTo + "не найден");
         }
 
-        result = new Ticket[copyToIndexFromTo];
-        System.arraycopy(tmp, 0, result, 0, copyToIndexFromTo);
+        result = new Ticket[copyToIndex];
+        System.arraycopy(tmp, 0, result, 0, copyToIndex);
 
         Ticket[] ticketResult = result;
         Arrays.sort(ticketResult);
